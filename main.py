@@ -1,0 +1,39 @@
+# initial state and problem
+cities = ["A","B","C","D","E","F"]
+distances = [
+    [0,  12,  8, 15,  7, 11],
+    [12,  0,  6,  9, 14,  5],
+    [8,   6,  0, 10,  4, 13],
+    [15,  9, 10,  0,  8,  6],
+    [7,  14,  4,  8,  0,  9],
+    [11,  5, 13,  6,  9,  0]
+]
+unvisited = {1, 2, 3, 4, 5}
+
+
+# Cari minimum spanning tree buat heuristics nya
+def mst_cost(unvisited, distances):
+    if len(unvisited) <= 1:
+        return 0
+
+    tree = {next(iter(unvisited))}
+    remaining = set(unvisited) - tree
+    total = 0
+
+    while remaining:
+        best_edge = min(
+            (distances[a][b], b)
+            for a in tree
+            for b in remaining
+        )
+
+        cost, city = best_edge
+
+        total = total + cost
+        tree.add(city)
+        remaining.remove(city)
+
+    return total
+
+result = mst_cost(unvisited, distances)
+print(f"The total cost of MST is: {result}")
