@@ -1,0 +1,16 @@
+======================================
+Algoritma          : A*
+Rute               : A -> G -> D -> B -> I -> E -> C -> H -> J -> F -> A
+Total jarak        : 87
+Node expanded      : 39
+Max frontier size  : 125
+Waktu eksekusi     : 6.177 ms (rata-rata 5 run)
+======================================
+======================================
+Algoritma          : GBFS
+Rute               : A -> C -> E -> G -> H -> I -> B -> J -> F -> D -> A
+Total jarak        : 154
+Node expanded      : 9
+Max frontier size  : 37
+Waktu eksekusi     : 1.281 ms (rata-rata 5 run)
+======================================
